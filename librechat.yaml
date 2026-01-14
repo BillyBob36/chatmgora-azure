@@ -1,0 +1,65 @@
+version: 1.1.7
+
+cache: true
+
+registration:
+  socialLogins: []
+  allowedDomains: []
+
+endpoints:
+  azureOpenAI:
+    titleModel: "gpt-5.2-chat-2"
+    plugins: true
+    groups:
+      - group: "ChatMgora Azure"
+        apiKey: "${AZURE_OPENAI_API_KEY}"
+        instanceName: "infan-mkcivtsn-eastus2"
+        version: "2024-12-01-preview"
+        baseURL: "https://infan-mkcivtsn-eastus2.cognitiveservices.azure.com/openai/deployments"
+        models:
+          gpt-5.2-chat-2:
+            deploymentName: "gpt-5.2-chat-2"
+            version: "2025-12-11"
+
+  custom:
+    []
+
+fileConfig:
+  endpoints:
+    azureOpenAI:
+      fileLimit: 20
+      fileSizeLimit: 100
+      totalSizeLimit: 1000
+      supportedMimeTypes:
+        - "image/jpeg"
+        - "image/jpg"
+        - "image/png"
+        - "image/webp"
+        - "image/gif"
+        - "text/plain"
+        - "text/csv"
+        - "text/html"
+        - "text/markdown"
+        - "application/pdf"
+        - "application/json"
+        - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        - "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        - "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+
+  serverFileSizeLimit: 1000
+  avatarSizeLimit: 2
+
+rateLimits:
+  fileUploads:
+    ipMax: 100
+    ipWindowInMinutes: 60
+    userMax: 50
+    userWindowInMinutes: 60
+
+interface:
+  privacyPolicy:
+    externalUrl: ""
+    openNewTab: true
+  termsOfService:
+    externalUrl: ""
+    openNewTab: true

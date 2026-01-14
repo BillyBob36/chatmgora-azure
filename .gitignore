@@ -1,0 +1,19 @@
+# Environment variables
+.env
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Docker volumes
+mongodb_data/
+librechat_data/
+librechat_logs/

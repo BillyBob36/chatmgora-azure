@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: chatmgora-mongodb
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+    networks:
+      - chatmgora-network
+
+  librechat:
+    image: ghcr.io/danny-avila/librechat:latest
+    container_name: chatmgora-app
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+      - MONGO_URI=mongodb://admin:${MONGO_PASSWORD}@mongodb:27017/LibreChat?authSource=admin
+      - DOMAIN_CLIENT=${DOMAIN_CLIENT}
+      - DOMAIN_SERVER=${DOMAIN_SERVER}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET}
+      - CREDS_KEY=${CREDS_KEY}
+      - CREDS_IV=${CREDS_IV}
+      - ALLOW_REGISTRATION=${ALLOW_REGISTRATION}
+      - ALLOW_SOCIAL_LOGIN=false
+      - ALLOW_SOCIAL_REGISTRATION=false
+      - SESSION_EXPIRY=${SESSION_EXPIRY}
+      - REFRESH_TOKEN_EXPIRY=${REFRESH_TOKEN_EXPIRY}
+      - DEBUG_LOGGING=true
+      - DEBUG_CONSOLE=true
+    volumes:
+      - ./librechat.yaml:/app/librechat.yaml:ro
+      - librechat_data:/app/client/public/images
+      - librechat_logs:/app/api/logs
+    networks:
+      - chatmgora-network
+
+volumes:
+  mongodb_data:
+  librechat_data:
+  librechat_logs:
+
+networks:
+  chatmgora-network:
+    driver: bridge
