@@ -1,5 +1,9 @@
 # Environment variables
 .env
+.env.production
+
+# Deployment docs with secrets
+DEPLOY.md
 
 # Logs
 *.log
