@@ -39,9 +39,6 @@ services:
       - SESSION_EXPIRY=${SESSION_EXPIRY}
       - REFRESH_TOKEN_EXPIRY=${REFRESH_TOKEN_EXPIRY}
       - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
-      - DALLE_API_KEY=${AZURE_DALLE_API_KEY}
-      - DALLE3_AZURE_API_VERSION=2024-02-01
-      - DALLE3_BASEURL=https://infan-mke96kkv-swedencentral.cognitiveservices.azure.com/openai/deployments/dall-e-3
       - DEBUG_LOGGING=true
       - DEBUG_CONSOLE=true
     volumes:
