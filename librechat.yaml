@@ -17,13 +17,6 @@ endpoints:
         version: "2024-12-01-preview"
         models:
           gpt-5.2-chat-2: true
-      - group: "DALL-E-3"
-        apiKey: "${AZURE_DALLE_API_KEY}"
-        instanceName: "infan-mke96kkv-swedencentral"
-        deploymentName: "dall-e-3"
-        version: "2024-02-01"
-        models:
-          dall-e-3: true
 
 rateLimits:
   fileUploads:
