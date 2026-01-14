@@ -6,6 +6,15 @@ registration:
   socialLogins: []
   allowedDomains: []
 
+appTitle: "Chat-gora"
+
+interface:
+  endpointsMenu: true
+  modelSelect: true
+  parameters: true
+  sidePanel: true
+  presets: true
+
 endpoints:
   azureOpenAI:
     titleModel: "gpt-5.2-chat-2"
