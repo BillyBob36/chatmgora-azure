@@ -1,4 +1,4 @@
-version: 1.2.8
+version: 1.2.1
 
 cache: true
 
@@ -7,22 +7,16 @@ registration:
   allowedDomains: []
 
 endpoints:
-  custom:
-    - name: "Azure GPT-5.2"
-      apiKey: "${AZURE_OPENAI_API_KEY}"
-      baseURL: "https://infan-mkcivtsn-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-5.2-chat-2"
-      models:
-        default: ["gpt-5.2-chat-2"]
-        fetch: false
-      titleConvo: true
-      titleModel: "gpt-5.2-chat-2"
-      summarize: false
-      forcePrompt: false
-      modelDisplayLabel: "Azure GPT-5.2"
-      addParams:
-        api-version: "2024-12-01-preview"
-      headers:
-        api-key: "${AZURE_OPENAI_API_KEY}"
+  azureOpenAI:
+    titleModel: "gpt-5.2-chat-2"
+    groups:
+      - group: "ChatMgora"
+        apiKey: "${AZURE_OPENAI_API_KEY}"
+        instanceName: "infan-mkcivtsn-eastus2"
+        deploymentName: "gpt-5.2-chat-2"
+        version: "2024-12-01-preview"
+        models:
+          gpt-5.2-chat-2: true
 
 rateLimits:
   fileUploads:

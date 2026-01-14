@@ -14,7 +14,9 @@ services:
       - chatmgora-network
 
   librechat:
-    image: ghcr.io/danny-avila/librechat:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: chatmgora-app
     restart: always
     ports:
@@ -37,11 +39,9 @@ services:
       - SESSION_EXPIRY=${SESSION_EXPIRY}
       - REFRESH_TOKEN_EXPIRY=${REFRESH_TOKEN_EXPIRY}
       - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
-      - CONFIG_PATH=/app/librechat.yaml
       - DEBUG_LOGGING=true
       - DEBUG_CONSOLE=true
     volumes:
-      - ./librechat.yaml:/app/librechat.yaml:ro
       - librechat_data:/app/client/public/images
       - librechat_logs:/app/api/logs
     networks:
