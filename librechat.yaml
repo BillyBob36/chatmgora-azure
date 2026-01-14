@@ -10,7 +10,7 @@ endpoints:
   custom:
     - name: "Azure GPT-5.2"
       apiKey: "${AZURE_OPENAI_API_KEY}"
-      baseURL: "https://infan-mkcivtsn-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-5.2-chat-2/chat/completions?api-version=2024-12-01-preview"
+      baseURL: "https://infan-mkcivtsn-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-5.2-chat-2"
       models:
         default: ["gpt-5.2-chat-2"]
         fetch: false
@@ -19,6 +19,8 @@ endpoints:
       summarize: false
       forcePrompt: false
       modelDisplayLabel: "Azure GPT-5.2"
+      addParams:
+        api-version: "2024-12-01-preview"
       headers:
         api-key: "${AZURE_OPENAI_API_KEY}"
 
