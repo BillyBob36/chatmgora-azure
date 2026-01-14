@@ -37,6 +37,7 @@ services:
       - SESSION_EXPIRY=${SESSION_EXPIRY}
       - REFRESH_TOKEN_EXPIRY=${REFRESH_TOKEN_EXPIRY}
       - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+      - CONFIG_PATH=/app/librechat.yaml
       - DEBUG_LOGGING=true
       - DEBUG_CONSOLE=true
     volumes:
