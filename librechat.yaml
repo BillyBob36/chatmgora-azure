@@ -10,6 +10,11 @@ endpoints:
   azureOpenAI:
     titleModel: "gpt-5.2-chat-2"
     plugins: true
+    imageGeneration:
+      enabled: true
+      model: "dall-e-3"
+      azure: true
+      deploymentName: "dall-e-3"
     groups:
       - group: "ChatMgora"
         apiKey: "${AZURE_OPENAI_API_KEY}"
