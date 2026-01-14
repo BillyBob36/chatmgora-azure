@@ -2,18 +2,11 @@ version: 1.2.1
 
 cache: true
 
+appTitle: "Chat-gora"
+
 registration:
   socialLogins: []
   allowedDomains: []
-
-appTitle: "Chat-gora"
-
-interface:
-  endpointsMenu: true
-  modelSelect: true
-  parameters: true
-  sidePanel: true
-  presets: true
 
 endpoints:
   azureOpenAI:
@@ -26,18 +19,3 @@ endpoints:
         version: "2024-12-01-preview"
         models:
           gpt-5.2-chat-2: true
-
-rateLimits:
-  fileUploads:
-    ipMax: 100
-    ipWindowInMinutes: 60
-    userMax: 50
-    userWindowInMinutes: 60
-
-interface:
-  privacyPolicy:
-    externalUrl: ""
-    openNewTab: true
-  termsOfService:
-    externalUrl: ""
-    openNewTab: true
