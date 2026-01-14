@@ -14,15 +14,10 @@ endpoints:
       - group: "ChatMgora Azure"
         apiKey: "${AZURE_OPENAI_API_KEY}"
         instanceName: "infan-mkcivtsn-eastus2"
+        deploymentName: "gpt-5.2-chat-2"
         version: "2024-12-01-preview"
-        baseURL: "https://infan-mkcivtsn-eastus2.cognitiveservices.azure.com/openai/deployments"
         models:
-          gpt-5.2-chat-2:
-            deploymentName: "gpt-5.2-chat-2"
-            version: "2025-12-11"
-
-  custom:
-    []
+          - "gpt-5.2-chat-2"
 
 fileConfig:
   endpoints:

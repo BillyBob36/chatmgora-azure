@@ -4,6 +4,7 @@
 
 # Deployment docs with secrets
 DEPLOY.md
+COOLIFY-SETUP.md
 
 # Logs
 *.log
