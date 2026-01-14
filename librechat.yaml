@@ -9,6 +9,7 @@ registration:
 endpoints:
   azureOpenAI:
     titleModel: "gpt-5.2-chat-2"
+    plugins: true
     groups:
       - group: "ChatMgora"
         apiKey: "${AZURE_OPENAI_API_KEY}"
