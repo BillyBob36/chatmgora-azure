@@ -42,6 +42,7 @@ services:
       - DALLE3_API_KEY=${AZURE_DALLE_API_KEY}
       - DALLE3_AZURE_API_VERSION=2024-02-01
       - DALLE3_BASEURL=https://infan-mke96kkv-swedencentral.cognitiveservices.azure.com/openai/deployments/dall-e-3/images/generations
+      - PLUGINS_USE_AZURE=true
       - DEBUG_LOGGING=true
       - DEBUG_CONSOLE=true
     volumes:
