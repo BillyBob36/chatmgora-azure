@@ -6,10 +6,6 @@ registration:
   socialLogins: []
   allowedDomains: []
 
-interface:
-  appTitle: "Chat-Mgora"
-  customFooter: "Chat-Mgora - Powered by Azure OpenAI"
-
 endpoints:
   azureOpenAI:
     titleModel: "gpt-5.2-chat-2"
@@ -30,6 +26,8 @@ rateLimits:
     userWindowInMinutes: 60
 
 interface:
+  appTitle: "Chat-Mgora"
+  customFooter: "Chat-Mgora - Powered by Azure OpenAI"
   privacyPolicy:
     externalUrl: ""
     openNewTab: true
